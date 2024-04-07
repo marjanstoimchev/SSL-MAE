@@ -7,4 +7,4 @@ Stoimchev, M., Ivanovskа, M., Štruc, V. Learning to Combine Local and Global I
 
 # The SSL-MAE (TPA)
 
-<img id="photo1" style="height:512px;width:auto;" src="media/method.png" height="512" />
+<img id="photo1" style="height:256px;width:512px;" src="media/method.png" height="512" />
