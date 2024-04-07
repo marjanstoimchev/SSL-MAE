@@ -5,6 +5,6 @@ This repository contains PyTorch implementation of the following paper:
 Stoimchev, M., Ivanovskа, M., Štruc, V. Learning to Combine Local and Global Image Information for Contactless Palmprint Recognition
 (This is an initial version, the code will be updated)
 
-# The SSL-MAE (TPA)
+# The Semi-Supervised Learning Masked Autoencoder (SSL-MAE)
 
 <img id="photo1" style="height:256px;width:512px;" src="media/method.png" height="512" />
