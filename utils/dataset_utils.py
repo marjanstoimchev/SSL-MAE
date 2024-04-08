@@ -70,6 +70,8 @@ def one_hot_encode(labels, num_classes):
         raise ValueError("Labels out of range.")
     return np.eye(num_classes)[labels]
 
+
+
 def split_mlc_df(df: pd.DataFrame, test_size: float = 0.2, seed: int = 42) -> tuple:
     """
     Splits a DataFrame for multi-label classification (MLC) tasks into training and test sets.
@@ -95,6 +97,8 @@ def split_mlc_df(df: pd.DataFrame, test_size: float = 0.2, seed: int = 42) -> tu
     # Return the split DataFrames
     return df.iloc[train_idx].reset_index(drop=True), df.iloc[test_idx].reset_index(drop=True)
 
+
+
 def split_mcc_df(df: pd.DataFrame, test_size: float = 0.2, seed: int = 42) -> tuple:
     """
     Splits a DataFrame for multi-class classification (MCC) into training and test sets,
@@ -118,6 +122,7 @@ def split_mcc_df(df: pd.DataFrame, test_size: float = 0.2, seed: int = 42) -> tu
     train_idx, test_idx = next(sss.split(df, df['label_id']))
     # Return the training and testing set DataFrames
     return df.loc[train_idx].reset_index(drop=True), df.loc[test_idx].reset_index(drop=True)
+
 
 def random_sampling(df: pd.DataFrame, p: float, seed: int = None) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
@@ -149,7 +154,10 @@ def random_sampling(df: pd.DataFrame, p: float, seed: int = None) -> Tuple[pd.Da
     
     labeled = df.loc[indices_labeled]
     unlabeled = df.loc[indices_unlabeled]
+
     return labeled, unlabeled
+
+
 
 def prepare_dataframes_mlc(path, dataset):
     """
@@ -165,6 +173,8 @@ def prepare_dataframes_mlc(path, dataset):
     data_select = DatasetSelectorMLC(path, dataset)
     df_train, df_test = data_select.generate()
     return df_train, df_test
+
+
 
 def prepare_dataframes_mcc(path, dataset):
     """
@@ -187,6 +197,7 @@ def prepare_dataframes_mcc(path, dataset):
         df_train = GenerateCSV(path_tr).generate()
         df_test = GenerateCSV(path_te).generate()       
         df_test['file_path'] = df_test['file_path'] + '/' + df_test['image_name']
+    
     else:
         # General handling for other datasets
         df_train = GenerateCSV(path).generate()
@@ -197,7 +208,11 @@ def prepare_dataframes_mcc(path, dataset):
     df_train = create_label_encoder(df_train, f"{path_labels}/classes.npy")
     if df_test is not None:
         df_test = create_label_encoder(df_test, f"{path_labels}/classes.npy")
+
+    
     return df_train, df_test
+
+
 
 class DatasetSplitter:
     """Utility class for dataset manipulation."""
@@ -265,6 +280,7 @@ class DatasetSplitter:
     def _ensure_label_presence(self, df_train, df_val, label):
         """Ensures that the validation set contains at least one instance of a specific label."""
         if df_val.iloc[:, 1:].sum(0)[label] == 0:
-            new_row = df_train[df_train[label] == 1].iloc[0]
-            df_val = pd.concat([df_val, new_row], ignore_index=True).reset_index(drop=True)
+            new_row = df_train[df_train[label] == 1]
+            df_val = pd.concat([df_val, new_row], ignore_index=True)
+            df_val.reset_index(inplace = False)
         return df_val
