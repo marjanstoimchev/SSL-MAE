@@ -10,7 +10,7 @@ The increasing volume of remotely sensed imagery (RSI) requires efficient proces
 
 ## Methodology
 
-<img id="methodology-overview" style="height:400px;width:800px;" src="images/methodology_v3.pdf" alt="SSL-MAE Framework Overview" />
+<img id="methodology-overview" style="height:400px;width:800px;" src="images/methodology.png" alt="SSL-MAE Framework Overview" />
 
 SSL-MAE integrates self-supervised and supervised learning within a unified masked autoencoder framework consisting of five key components:
 
