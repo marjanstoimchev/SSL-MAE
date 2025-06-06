@@ -30,3 +30,44 @@ Following SimMIM design, a lightweight decoder reconstructs pixel intensities of
 
 ### 5. Adaptive Joint Learning
 Model parameters are updated via weighted combination of supervised and unsupervised losses:
+
+
+
+We investigate two strategies for the weight parameter w:
+- **Grid Search (SSL-MAE-GS)**: Optimal w selected via validation performance
+- **Learnable Weight (SSL-MAE-wₗ)**: w parameterized as trainable sigmoid function
+
+The adaptive mechanism allows the network to automatically balance reliance on labeled vs unlabeled data, enabling effective exploitation of abundant unlabeled data while emphasizing discriminative learning as needed.
+
+## Key Features
+
+- **Unified End-to-End Framework**: Combines self-supervised and supervised learning without two-stage training
+- **Adaptive Supervision Control**: Dynamic balancing of supervision levels during training
+- **Multi-Label Support**: Specifically designed for complex multi-label remote sensing classification
+- **Transferable Design**: Adaptive joint learning can enhance other self-supervised methods
+- **Data Efficient**: Effective performance with limited labeled data (as low as 1%)
+
+## Installation
+
+```bash
+git clone https://github.com/marjanstoimchev/SSL-MAE.git
+cd SSL-MAE
+
+# Create conda environment
+conda create -n ssl-mae python=3.8
+conda activate ssl-mae
+
+# Install PyTorch
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Install dependencies
+pip install -r requirements.txt
+
+
+
+@article{stoimchev2024ssl_mae,
+  title={SSL-MAE: Adaptive Semi-Supervised Learning Framework for Multi-Label Classification of Remote Sensing Images Using Masked Autoencoders},
+  author={Stoimchev, Marjan and Levatić, Jurica and Kocev, Dragi and Džeroski, Sašo},
+  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+  year={2025}
+}
