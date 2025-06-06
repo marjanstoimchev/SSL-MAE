@@ -63,11 +63,12 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 # Install dependencies
 pip install -r requirements.txt
 ```
-
-
+## Citation
+```bash
 @article{stoimchev2024ssl_mae,
   title={SSL-MAE: Adaptive Semi-Supervised Learning Framework for Multi-Label Classification of Remote Sensing Images Using Masked Autoencoders},
   author={Stoimchev, Marjan and Levatić, Jurica and Kocev, Dragi and Džeroski, Sašo},
   journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
   year={2025}
 }
+```
