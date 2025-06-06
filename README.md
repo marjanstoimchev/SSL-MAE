@@ -62,7 +62,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 # Install dependencies
 pip install -r requirements.txt
-
+```
 
 
 @article{stoimchev2024ssl_mae,
