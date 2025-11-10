@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# PyTorch
+*.pth
+*.pt
+
+# Checkpoints and logs
+saved_models/
+saved_models_fabric/
+checkpoints/
+lightning_logs/
+wandb/
+*.ckpt
+
+# Data
+rs_datasets/
+data/
+encoder_classes/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Temporary files
+*.log
+*.tmp
