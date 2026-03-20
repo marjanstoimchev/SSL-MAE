@@ -13,9 +13,10 @@ venv/
 env/
 ENV/
 
-# PyTorch
-*.pth
+# Model weights
 *.pt
+*.pth
+*.ckpt
 
 # Checkpoints and logs
 saved_models/
@@ -24,7 +25,6 @@ outputs/
 checkpoints/
 lightning_logs/
 wandb/
-*.ckpt
 
 # Data
 rs_datasets/
