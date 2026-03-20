@@ -1,0 +1,10 @@
+defaults:
+  - default
+
+experiment:
+  name: "mae_mlrsnet_mlc"
+
+data:
+  hf_dataset_name: "jonathan-roberts1/MLRSNet"
+  learning_task: "mlc"
+  n_classes: 60

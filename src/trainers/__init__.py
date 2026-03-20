@@ -1,12 +1,15 @@
-"""Training modules for SSL-MAE using PyTorch Lightning and Fabric."""
+"""Training modules for SSL-MAE and I-JEPA."""
 
-from .learner import SSLMAE_Learner, SSLDataModule
+from .mae_learner import MAELearner
+from .ijepa_learner import IJEPALearner
 from .callbacks import ModelCheckpoint_, EarlyStopping_, RichProgressBar_
+from .schedulers import CosineWarmupScheduler
 
 __all__ = [
-    'SSLMAE_Learner',
-    'SSLDataModule',
+    'MAELearner',
+    'IJEPALearner',
     'ModelCheckpoint_',
     'EarlyStopping_',
     'RichProgressBar_',
+    'CosineWarmupScheduler',
 ]

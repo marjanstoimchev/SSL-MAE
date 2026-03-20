@@ -2,6 +2,7 @@ from lightning.pytorch.callbacks import ModelCheckpoint, EarlyStopping
 from lightning.pytorch.callbacks.progress import RichProgressBar
 from lightning.pytorch.callbacks.progress.rich_progress import RichProgressBarTheme
 
+
 class ModelCheckpoint_(ModelCheckpoint):
     def __init__(self, dirpath, metric, mode, save_on_train_epoch_end):
         super().__init__(
@@ -9,11 +10,13 @@ class ModelCheckpoint_(ModelCheckpoint):
             monitor=metric,
             mode=mode,
             dirpath=dirpath,
-            save_on_train_epoch_end = save_on_train_epoch_end,
-            save_weights_only = True,
-            filename="model-{epoch:2d}-{val_loss:.2f}",
-            verbose=False
+            save_on_train_epoch_end=save_on_train_epoch_end,
+            save_weights_only=False,
+            save_last=True,
+            filename="best-{epoch:02d}-{val_loss:.4f}",
+            verbose=False,
         )
+
 
 class EarlyStopping_(EarlyStopping):
     def __init__(self, metric, mode, patience):
@@ -21,8 +24,9 @@ class EarlyStopping_(EarlyStopping):
             monitor=metric,
             min_delta=0.00,
             patience=patience,
-            mode=mode
+            mode=mode,
         )
+
 
 class RichProgressBar_(RichProgressBar):
     def __init__(self):
@@ -37,5 +41,5 @@ class RichProgressBar_(RichProgressBar):
                 time="grey82",
                 processing_speed="grey82",
                 metrics="grey82",
-            )
+            ),
         )

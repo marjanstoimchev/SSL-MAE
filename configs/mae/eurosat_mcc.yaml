@@ -1,0 +1,10 @@
+defaults:
+  - default
+
+experiment:
+  name: "mae_eurosat_mcc"
+
+data:
+  hf_dataset_name: "jonathan-roberts1/EuroSAT"
+  learning_task: "mcc"
+  n_classes: 10

@@ -1,0 +1,10 @@
+defaults:
+  - default
+
+experiment:
+  name: "mae_ucm_mlc"
+
+data:
+  hf_dataset_name: "jonathan-roberts1/UC_Merced_LandUse_MultiLabel"
+  learning_task: "mlc"
+  n_classes: 17

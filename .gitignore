@@ -20,6 +20,7 @@ ENV/
 # Checkpoints and logs
 saved_models/
 saved_models_fabric/
+outputs/
 checkpoints/
 lightning_logs/
 wandb/
@@ -27,7 +28,7 @@ wandb/
 
 # Data
 rs_datasets/
-data/
+/data/
 encoder_classes/
 
 # IDE
