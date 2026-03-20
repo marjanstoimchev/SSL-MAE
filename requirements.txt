@@ -1,7 +1,7 @@
-# Core dependencies
+# Core
 torch>=2.0.0
 torchvision>=0.15.0
-transformers>=4.30.0
+timm>=0.9.0
 
 # Lightning
 lightning>=2.0.0
@@ -17,10 +17,11 @@ pillow>=9.5.0
 
 # ML utilities
 scikit-learn>=1.2.0
-iterstrat>=0.1.0
+iterative-stratification>=0.1.7
 
-# Logging and monitoring
-wandb>=0.15.0
+# Logging (optional — csv logger works without these)
+# wandb>=0.15.0
+# tensorboard>=2.13.0
 
 # Progress bars
 rich>=13.0.0
